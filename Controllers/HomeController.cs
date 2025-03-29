@@ -55,8 +55,4 @@ public class HomeController : Controller
         return RedirectToAction("Boleta");
     }
 
-    public IActionResult Boleta()
-    {
-        return View();
-    }
 }
