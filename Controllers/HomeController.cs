@@ -24,6 +24,11 @@ public class HomeController : Controller
     {
         return View();
     }
+    public IActionResult Boleta()
+{
+    return View();
+}
+
 
     [HttpPost]
     public IActionResult ProcesarCambio(string monedaOrigen, string monedaDestino, decimal cantidad)
