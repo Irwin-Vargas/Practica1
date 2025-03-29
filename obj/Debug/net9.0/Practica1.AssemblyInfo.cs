@@ -13,7 +13,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Practica1")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+258e4e7b4c186a16ad2736ca0d75f30ee283b203")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2007ee0e414d6075ccc39b8ffd961373743fed9a")]
+>>>>>>> boleta
 [assembly: System.Reflection.AssemblyProductAttribute("Practica1")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Practica1")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
