@@ -31,28 +31,26 @@ public class HomeController : Controller
 
 
     [HttpPost]
-    public IActionResult ProcesarCambio(string monedaOrigen, string monedaDestino, decimal cantidad)
+public IActionResult ProcesarCambio(string monedaOrigen, string monedaDestino, decimal cantidad)
+{
+    decimal tipoCambio = 1.0m;
+
+    if (monedaOrigen == "BRL" && monedaDestino == "PEN")
     {
-        decimal tipoCambio = 1.0m; // Valor por defecto
-
-        // Definir el tipo de cambio fijo
-        if (monedaOrigen == "BRL" && monedaDestino == "PEN")
-        {
-            tipoCambio = 0.634m; // 1 BRL = 0.634 PEN
-        }
-        else if (monedaOrigen == "PEN" && monedaDestino == "BRL")
-        {
-            tipoCambio = 1 / 0.634m; // 1 PEN = 1.577 BRL (inverso)
-        }
-
-        decimal montoConvertido = cantidad * tipoCambio;
-
-        TempData["MonedaOrigen"] = monedaOrigen;
-        TempData["MonedaDestino"] = monedaDestino;
-        TempData["Cantidad"] = cantidad;
-        TempData["MontoConvertido"] = montoConvertido;
-
-        return RedirectToAction("Boleta");
+        tipoCambio = 0.634m;
+    }
+    else if (monedaOrigen == "PEN" && monedaDestino == "BRL")
+    {
+        tipoCambio = 1 / 0.634m;
     }
 
+    decimal montoConvertido = cantidad * tipoCambio;
+
+    TempData["MonedaOrigen"] = monedaOrigen;
+    TempData["MonedaDestino"] = monedaDestino;
+    TempData["Cantidad"] = cantidad.ToString();  // Convertir a string
+    TempData["MontoConvertido"] = montoConvertido.ToString();  // Convertir a string
+
+    return RedirectToAction("Boleta");
+}
 }
