@@ -1,0 +1,33 @@
+@{
+    ViewData["Title"] = "Cambio de Moneda";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center">Casa de Cambio Online</h2>
+    <form method="post" asp-action="ProcesarCambio">
+        <div class="mb-3">
+            <label class="form-label">Moneda de origen:</label>
+            <select class="form-select" name="monedaOrigen">
+                <option value="BRL">Real Brasileño (BRL)</option>
+                <option value="USD">Dólar Estadounidense (USD)</option>
+                <option value="PEN">Sol Peruano (PEN)</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Moneda de destino:</label>
+            <select class="form-select" name="monedaDestino">
+                <option value="PEN">Sol Peruano (PEN)</option>
+                <option value="USD">Dólar Estadounidense (USD)</option>
+                <option value="BRL">Real Brasileño (BRL)</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Cantidad:</label>
+            <input type="number" class="form-control" name="cantidad" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Hacer Cambio</button>
+    </form>
+</div>
